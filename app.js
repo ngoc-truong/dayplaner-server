@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
-const timeslotRouter = require("./controllers/timeslots");
+const planRouter = require("./controllers/plans");
 const middleware = require("./utils/middleware");
 const logger = require("./utils/logger");
 
@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(middleware.requestLogger);
 
 // Controllers/Routes
-app.use("/api/timeslots", timeslotRouter);
+app.use("/api/plans", planRouter);
 
 app.use(middleware.unknownEndpoint);
 app.use(middleware.errorHandler);

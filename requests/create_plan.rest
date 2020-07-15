@@ -1,0 +1,9 @@
+POST http://localhost:3001/api/plans
+Content-Type: application/json
+
+{
+	"title": "Do fitness exercises",
+	"description": "Do some exercises which will improve your fitness with YAOG.",
+	"starting": "2020-10-20 10:30",
+	"ending": "2020-10-20 11:30"
+}
