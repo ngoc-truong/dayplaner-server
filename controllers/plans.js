@@ -16,7 +16,6 @@ planRouter.post("/", async (req, res) => {
 	}
 });
 
-
 // Get all plans
 planRouter.get("/", async (req, res) => {
 	try {
@@ -72,5 +71,3 @@ planRouter.delete("/:id", async (req, res) => {
 });
 
 module.exports = planRouter;
-
-
