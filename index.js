@@ -1,19 +1,11 @@
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
-const app = express();
-const db = require("./db");
+// Only responsible for creating a server and listening to requests
+const app = require("./app");
+const http = require("http");
+const config = require("./utils/config");
+const logger = require("./utils/logger");
 
-// Middlewares
-app.use(cors());
-app.use(express.json());	// In order to get access to req.body
+const server = http.createServer(app);
 
-const PORT = process.env.PORT || 3001;
-
-app.get("/", (req, res) => {
-	res.send("<h1>Moin</h1>");
-});
-
-app.listen(PORT, () => {
-	console.log(`Server is listening to port ${PORT}`);
+server.listen(config.PORT, () => {
+	logger.info(`Server is running on port ${config.PORT}`);
 });
