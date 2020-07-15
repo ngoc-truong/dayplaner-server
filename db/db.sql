@@ -1,0 +1,10 @@
+CREATE DATABASE dayplaner;
+
+CREATE TABLE timeslot (
+	id BIGSERIAL NOT NULL PRIMARY KEY,
+	title VARCHAR(150) NOT NULL, 
+	description VARCHAR(400) NOT NULL, 
+	starting TIMESTAMP NOT NULL,
+	ending TIMESTAMP NOT NULL
+);
+
