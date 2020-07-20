@@ -5,10 +5,10 @@ const logger = require("../utils/logger");
 // Create a plan
 planRouter.post("/", async (req, res) => {
 	try {
-		const { title, description, starting, ending } = req.body;
+		const { title, description, weekday, starting, ending } = req.body;
 		const newPlan = await db.query(
-			"INSERT INTO plan (title, description, starting, ending) VALUES ($1, $2, $3, $4) RETURNING *",
-			[ title, description, starting, ending ]
+			"INSERT INTO plan (title, description, weekday, starting, ending) VALUES ($1, $2, $3, $4, $5) RETURNING *",
+			[ title, description, weekday, starting, ending ]
 		);
 		res.json(newPlan.rows[0]);
 	} catch (err) {
